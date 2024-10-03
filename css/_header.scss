@@ -1,0 +1,150 @@
+@import "variables";
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: $primaryBg;
+
+  .logo {
+    max-width: 100px;
+  }
+}
+
+.nav {
+  position: fixed;
+  padding: 2rem;
+  background-color: #333;
+  color: white;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+
+  transform: translateX(100%);
+  transition: 250ms ease-in-out;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+    height: 100%;
+  }
+
+  &__link {
+    color: white;
+    display: inline-block;
+    font-size: 1.5rem;
+    text-decoration: none;
+
+   
+  }
+
+  &__link:hover {
+    color: $primaryColor;
+  }
+}
+
+.nav__link.active{
+  
+    color: $primaryColor;
+
+}
+
+.nav-open .nav {
+  transform: translateX(0%);
+}
+
+.nav-open .nav-toggle {
+  position: fixed;
+}
+
+.nav-open .hamburger {
+  transform: rotate(0.625turn);
+}
+
+.nav-open .hamburger::after {
+  opacity: 0;
+}
+
+.nav-open .hamburger::before {
+  transform: rotate(90deg) translateX(-7px);
+}
+
+.nav-toggle {
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  position: absolute;
+  right: 0;
+  z-index: 100;
+}
+
+.hamburger {
+  display: block;
+  position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  background-color: $primaryColor;
+  width: 2em;
+  height: 3px;
+  transition: transform 250ms ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  // transform: translateX(-50%);
+  left: 0;
+  right: 0;
+}
+
+.hamburger::before {
+  top: 7px;
+}
+.hamburger::after {
+  bottom: 7px;
+}
+
+@media (min-width: 800px) {
+  header {
+    // background-color: orange;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    justify-content: space-between;
+    padding: 0 2rem;
+  }
+  .nav {
+    position: relative;
+    display: inline-flex;
+
+    background-color: transparent;
+    left: 0;
+
+    transform: translateX(0%);
+
+    &__list {
+      display: flex;
+    //   background-color: blue;
+      flex-direction: row;
+    }
+
+    &__link{
+        color: #333;
+        font-size: var(--fs-text);
+    }
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+}

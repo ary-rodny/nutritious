@@ -1,0 +1,60 @@
+
+@import "variables";
+.intro{
+    // border: 1px solid red;
+    // background-color: blue;
+    //background images are decorational
+    background-color: $secondaryBg;
+    position: relative;
+    background-image: url("/img/pexels-intro1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    min-height: 90vh;
+    padding-bottom: 2rem;
+
+    &__content{
+     
+        // border: 2px solid orange;
+        // background-color: yellow !important;
+        min-height: 50vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        padding-top: 4rem;
+    }
+
+    &__overlay{
+        // background-color: rgba(0, 0, 0, .2);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+}
+
+.container{
+    height: inherit;
+    // border: 1px solid green;
+    max-width: 90%;
+    margin: auto;
+}
+
+
+@media (min-width:1300px){
+    .intro{
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &__content{
+            // border: 2px solid red;
+            justify-content: center;
+            min-height: inherit;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+@import "variables";
+.breakfast{
+    
+    background-color: lightblue;
+    min-height: 80vh;
+    .container{
+        min-height: inherit;
+    }
+
+    &__intro{
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: center;
+        
+        p{
+            text-align: center;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+    }
+
+
+
+    &__cards{
+        
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-rows: 300px 300px;
+        gap: 1rem;
+    }
+
+
+    .card__img__container{
+        position: relative;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        cursor: pointer;
+
+        img{
+            position: relative;
+            height: 115%;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transform-origin: center;
+            transition: .5s;
+        }
+
+    }
+
+    .card__img__container:hover .card__img__overlay{
+        opacity: 1;
+    }
+
+    .card__img__container:hover img{
+        transform: translate(-50%, -50%) scale(1.1)   ;
+    }
+
+  
+}
